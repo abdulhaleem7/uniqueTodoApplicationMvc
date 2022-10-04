@@ -1,0 +1,54 @@
+﻿@model UniqueTodoApplication.DTOs.TodoitemDto
+
+
+<section id="main-content">
+    <section class="wrapper">
+         <h3><i class="fa fa-angle-right"></i>Details</h3>
+        <dl class="row">
+            <dt class="col-sm-2">
+                Name:
+            </dt>
+            <dd class="col-sm-10">
+                @Model.Name
+            </dd>
+            <dt class="col-sm-2">
+                Description:
+            </dt>
+            <dd class="col-sm-10">
+                @Model.Description
+            </dd>
+            <dt class="col-sm-2">
+                Status:
+            </dt>
+            <dd class="col-sm-10">
+                @Model.Status
+            </dd>
+            <dt class="col-sm-2">
+                Priority:
+            </dt>
+            <dd class="col-sm-10">
+                @Model.Priority
+            </dd>
+            <dt class="col-sm-2">
+                TimeInterval:
+            </dt>
+            <dd class="col-sm-10">
+                @Model.TimeInterval
+            </dd>
+            <dt class="col-sm-2">
+                StartingTime:
+            </dt>
+            <dd class="col-sm-10">
+                @Model.StartingTime
+            </dd>
+            <dt class="col-sm-2">
+                OriginalTime:
+            </dt>
+            <dd class="col-sm-10">
+                @Model.OriginalTime
+            </dd>
+        </dl>
+
+        <button style="background-color:aqua;"><a asp-controller="Todoitem" asp-action="GetAllTodos">Back to List</a></button>
+    </section>
+</section>

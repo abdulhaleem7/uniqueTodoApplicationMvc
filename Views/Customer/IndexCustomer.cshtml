@@ -1,0 +1,79 @@
+﻿@{
+    Layout = "_CustomerDashboardLayout";
+}
+@model UniqueTodoApplication.DTOs.TodoitemDto
+
+<section id="main-content">
+    <section class="wrapper">
+        <h3><i class="fa fa-angle-right"></i>Search task by date</h3>
+
+        <div class="row mt">
+            <div class="col-lg-12">
+                <div class="form-panel">
+                    <h4 class="mb"><i class="fa fa-angle-right"></i> Kindly fill in this form to search task by date</h4>
+                    <form asp-action="GetEachCustomerTaskByDate" asp-controller="Todoitem" class="form-horizontal tasi-form">
+                       
+                        <div class="form-group has-error">
+                            <label class="col-sm-2 control-label col-lg-2" for="inputError">OriginalTime</label>
+                            <div class="col-lg-10">
+                                <input asp-for="OriginalTime" type="date" class="form-control" id="inputError" required />
+
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <input href="#myModal" type="submit" value="Submit" class="btn btn-success trigger-btn col-sm-12" data-toggle="modal" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+          @*<h3><i class="fa fa-angle-right"></i>Search task by time</h3>
+
+        <div class="row mt">
+            <div class="col-lg-12">
+                <div class="form-panel">
+                    <h4 class="mb"><i class="fa fa-angle-right"></i> Kindly fill in this form to search task by time</h4>
+                    <form asp-action="GetEachCustomerTaskByTime" asp-controller="Todoitem" class="form-horizontal tasi-form">
+                       
+                        <div class="form-group has-error">
+                            <label class="col-sm-2 control-label col-lg-2" for="inputError">OriginalTime</label>
+                            <div class="col-lg-10">
+                                <input asp-for="OriginalTime" type="time" class="form-control" id="inputError" required />
+
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <input href="#myModal" type="submit" value="Submit" class="btn btn-success trigger-btn col-sm-12" data-toggle="modal" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+          <h3><i class="fa fa-angle-right"></i>Search task by day</h3>
+
+        <div class="row mt">
+            <div class="col-lg-12">
+                <div class="form-panel">
+                    <h4 class="mb"><i class="fa fa-angle-right"></i> Kindly fill in this form to search task by day</h4>
+                    <form asp-action="GetEachCustomerTaskByDay" asp-controller="Todoitem" class="form-horizontal tasi-form">
+                       
+                        <div class="form-group has-error">
+                            <label class="col-sm-2 control-label col-lg-2" for="inputError">OriginalTime</label>
+                            <div class="col-lg-10">
+                                <input asp-for="OriginalTime" type="datetime-local" class="form-control" id="inputError" required />
+
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <input href="#myModal" type="submit" value="Submit" class="btn btn-success trigger-btn col-sm-12" data-toggle="modal" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>*@
+    </section>
+</section>

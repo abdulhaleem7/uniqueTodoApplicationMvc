@@ -1,0 +1,63 @@
+@model IEnumerable<UniqueTodoApplication.DTOs.TodoitemDto>
+@{
+    Layout = "_CustomerDashboardLayout";
+}
+
+<section id="main-content">
+    <section class="wrapper">
+        <div class="card-header" style="background-color:cyan;">
+            <div class="card-title">
+                <h1 style="color:white" class="text-center">Customers</h1>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.Priority)
+                    </th>
+
+                    <th>
+                        Details
+                    </th>
+                    <th>
+                        Delete
+                    </th>
+                    <th>
+                        Update
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var todoitem in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => todoitem.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => todoitem.Priority)
+                        </td>
+
+
+                        <td>
+                            <a asp-action="Details" asp-route-id="@todoitem.Id">Details</a>
+                        </td>
+                        <td>
+                            <a asp-action="Delete" asp-route-id="@todoitem.Id">Delete</a>
+                        </td>
+                         <td>
+                            <a asp-action="Update" asp-route-id="@todoitem.Id">Update</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <button style="background-color:aqua;"><a asp-controller="Customer" asp-action="IndexCustomer">Back to Index</a></button>
+    </section>
+</section>

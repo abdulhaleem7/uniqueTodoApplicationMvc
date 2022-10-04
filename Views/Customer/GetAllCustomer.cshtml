@@ -1,0 +1,63 @@
+@model IEnumerable<UniqueTodoApplication.DTOs.CustomerDto>
+@{
+    Layout = "_CustomerDashboardLayout";
+}
+
+<section id="main-content">
+    <section class="wrapper">
+        <div class="card-header" style="background-color:cyan;">
+            <div class="card-title">
+                <h1 style="color:white" class="text-center">Customers</h1>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </th>
+
+                    <th>
+                        Details
+                    </th>
+                    <th>
+                        Delete
+                    </th>
+                    <th>
+                        Update
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var customer in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => customer.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => customer.LastName)
+                        </td>
+
+
+                        <td>
+                            <a asp-action="Details" asp-route-id="@customer.Id">Details</a>
+                        </td>
+                        <td>
+                            <a asp-action="Delete" asp-route-id="@customer.Id">Delete</a>
+                        </td>
+                         <td>
+                            <a asp-action="Update" asp-route-id="@customer.Id">Update</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <button style="background-color:aqua;"><a asp-controller="Admin" asp-action="IndexAdmin">Back to Index</a></button>
+    </section>
+</section>

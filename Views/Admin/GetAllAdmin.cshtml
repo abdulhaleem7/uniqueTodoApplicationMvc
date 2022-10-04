@@ -1,0 +1,66 @@
+@model IEnumerable<UniqueTodoApplication.DTOs.AdminDto>
+@{
+    Layout = "_AdminDashboardLayout";
+}
+
+<section id="main-content">
+    <section class="wrapper">
+        <div class="card-header" style="background-color:wheat;">
+            <div class="card-title">
+                <h1 style="color:white" class="text-center">Admins</h1>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FirstName)
+                    </th>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.LastName)
+                    </th>
+
+                    <th>
+                        Details
+                    </th>
+                    <th>
+                        Delete
+                    </th>
+                     <th>
+                        Update
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var admin in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => admin.FirstName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => admin.LastName)
+                        </td>
+
+
+                        <td>
+                            <a asp-action="Details" asp-route-id="@admin.Id">Details</a>
+                        </td>
+                        <td>
+                            <a asp-action="Delete" asp-route-id="@admin.Id">Delete</a>
+                        </td>
+                         <td>
+                            <a asp-action="Update" asp-route-id="@admin.Id">Update</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <button style="background-color:wheat;"><a asp-controller="Admin" asp-action="IndexAdmin">Back to Index</a>
+        </button>
+
+
+    </section>
+</section>

@@ -1,0 +1,54 @@
+@model IEnumerable<UniqueTodoApplication.DTOs.TodoitemDto>
+@{
+    Layout = "_CustomerDashboardLayout";
+}
+<section id="main-content">
+    <section class="wrapper">
+        <div class="card-header" style="background-color:cyan;">
+            <div class="card-title">
+                <h1 style="color:white" class="text-center">Todo items</h1>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+
+                    <th>
+                        Details
+                    </th>
+                    <th>
+                        Delete
+                    </th>
+                     <th>
+                        Done
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+
+                        <td>
+                            <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        </td>
+                        <td>
+                            <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                         <td>
+                            <a asp-action="Done" asp-route-id="@item.Id">Done</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+         <button style="background-color:aqua;"><a asp-controller="Todoitem" asp-action="IndexCustomer">Back to Index</a></button>
+    </section>
+</section>

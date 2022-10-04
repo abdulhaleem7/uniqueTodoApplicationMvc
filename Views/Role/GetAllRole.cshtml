@@ -1,0 +1,57 @@
+@model IEnumerable<UniqueTodoApplication.DTOs.RoleDto>
+
+@{
+    Layout = "_AdminDashboardLayout";
+}  
+
+
+<section id="main-content">
+    <section class="wrapper">
+        <div class="card-header" style="background-color:cyan;">
+            <div class="card-title">
+                <h1 style="color:white" class="text-center">Roles</h1>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+
+                    <th>
+                        Details
+                    </th>
+                    <th>
+                        Delete
+                    </th>
+                    <th>
+                        Update
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var role in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => role.Name)
+                        </td>
+
+                        <td>
+                            <a asp-action="Details" asp-route-id="@role.Id">Details</a>
+                        </td>
+                        <td>
+                            <a asp-action="Delete" asp-route-id="@role.Id">Delete</a>
+                        </td>
+                        <td>
+                            <a asp-action="Update" asp-route-id="@role.Id">Update</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <button style="background-color:aqua;"><a asp-controller="Role" asp-action="GetAllRole">Back to List</a></button>
+    </section>
+</section>
